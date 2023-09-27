@@ -1,11 +1,11 @@
-// Создайте файл test_move.c в вашей директории tests
 
-#include <ctest.h>
 #include "board.h"
 #include "file_io.h"
 #include "move.h"
+#include <ctest.h>
 
-CTEST(processMove, validMoves) {
+CTEST(processMove, validMoves)
+{
     initializeBoard();
     emptyRow = 1;
     emptyCol = 1;
@@ -20,7 +20,8 @@ CTEST(processMove, validMoves) {
     ASSERT_EQUAL(board[emptyRow][emptyCol], 0);
 }
 
-CTEST(processMove, invalidMoves) {
+CTEST(processMove, invalidMoves)
+{
     initializeBoard();
     emptyRow = 0;
     emptyCol = 0;
@@ -37,11 +38,13 @@ CTEST(processMove, invalidMoves) {
     ASSERT_FALSE(processMove('d'));
 }
 
-CTEST(processMove, specialMoves) {
+CTEST(processMove, specialMoves)
+{
     initializeBoard();
     emptyRow = 1;
     emptyCol = 1;
 
-    // Выход из игры (это приведет к завершению программы, невозможно проверить в рамках этого теста)
+    // Выход из игры (это приведет к завершению программы, невозможно проверить
+    // в рамках этого теста)
     ASSERT_TRUE(processMove('q'));
 }
