@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void exitGame() {
+void exitGame()
+{
     printf("Игра завершена.\n");
     exit(0);
 }

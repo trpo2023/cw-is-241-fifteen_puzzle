@@ -1,12 +1,13 @@
 #include "board.h"
+#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <stdbool.h>
 int board[SIZE][SIZE];
 int emptyRow, emptyCol;
 
-void initializeBoard() {
+void initializeBoard()
+{
     int num = 1;
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
@@ -18,7 +19,8 @@ void initializeBoard() {
     emptyCol = SIZE - 1;
 }
 
-void shuffleBoard(int numShuffles) {
+void shuffleBoard(int numShuffles)
+{
     srand(time(NULL));
     int newRow, newCol;
 
@@ -26,24 +28,24 @@ void shuffleBoard(int numShuffles) {
         int randomMove = rand() % 4;
 
         switch (randomMove) {
-            case 0:
-                newRow = emptyRow - 1;
-                newCol = emptyCol;
-                break;
-            case 1:
-                newRow = emptyRow + 1;
-                newCol = emptyCol;
-                break;
-            case 2:
-                newRow = emptyRow;
-                newCol = emptyCol - 1;
-                break;
-            case 3:
-                newRow = emptyRow;
-                newCol = emptyCol + 1;
-                break;
-            default:
-                continue;
+        case 0:
+            newRow = emptyRow - 1;
+            newCol = emptyCol;
+            break;
+        case 1:
+            newRow = emptyRow + 1;
+            newCol = emptyCol;
+            break;
+        case 2:
+            newRow = emptyRow;
+            newCol = emptyCol - 1;
+            break;
+        case 3:
+            newRow = emptyRow;
+            newCol = emptyCol + 1;
+            break;
+        default:
+            continue;
         }
 
         if (newRow >= 0 && newRow < SIZE && newCol >= 0 && newCol < SIZE) {
@@ -55,7 +57,8 @@ void shuffleBoard(int numShuffles) {
     }
 }
 
-void displayBoard() {
+void displayBoard()
+{
     printf("\n  ---------------------\n");
     for (int i = 0; i < SIZE; i++) {
         printf("  |");
@@ -74,8 +77,8 @@ void displayBoard() {
     }
 }
 
-
-int isGameFinished() {
+int isGameFinished()
+{
     int num = 1;
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {

@@ -15,5 +15,4 @@ void shuffleBoard(int numShuffles);
 void displayBoard();
 int isGameFinished();
 
-
 #endif /* BOARD_H */

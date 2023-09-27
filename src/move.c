@@ -1,30 +1,31 @@
-#include <stdio.h>
+#include "move.h"
 #include "board.h"
 #include "file_io.h"
-#include "move.h"
+#include <stdio.h>
 
-bool processMove(char move) {
+bool processMove(char move)
+{
     int newRow = emptyRow;
     int newCol = emptyCol;
 
     switch (move) {
-        case 'w':
-            newRow = emptyRow - 1;
-            break;
-        case 's':
-            newRow = emptyRow + 1;
-            break;
-        case 'a':
-            newCol = emptyCol - 1;
-            break;
-        case 'd':
-            newCol = emptyCol + 1;
-            break;
-        case 'q':
-            exitGame();
-            return true;
-        default:
-            return false;
+    case 'w':
+        newRow = emptyRow - 1;
+        break;
+    case 's':
+        newRow = emptyRow + 1;
+        break;
+    case 'a':
+        newCol = emptyCol - 1;
+        break;
+    case 'd':
+        newCol = emptyCol + 1;
+        break;
+    case 'q':
+        exitGame();
+        return true;
+    default:
+        return false;
     }
 
     if (newRow >= 0 && newRow < SIZE && newCol >= 0 && newCol < SIZE) {
@@ -37,4 +38,3 @@ bool processMove(char move) {
 
     return false;
 }
-

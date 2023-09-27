@@ -1,9 +1,10 @@
-#include <stdio.h>
 #include "board.h"
 #include "file_io.h"
 #include "move.h"
+#include <stdio.h>
 
-int main() {
+int main()
+{
     int numShuffles = 1000;
 
     initializeBoard();
