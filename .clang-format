@@ -31,7 +31,7 @@
         "IndentBraces": false,
         "SplitEmptyFunction": true,
         "SplitEmptyNamespace": true,
-        "SplitEmptyRecord": true
+        "SplitEmptyRecord": false
     },
     "BreakBeforeBinaryOperators": "All",
     "BreakBeforeBraces": "Custom",
