@@ -1,4 +1,3 @@
-
 #include "board.h"
 #include "file_io.h"
 #include "move.h"
@@ -43,8 +42,5 @@ CTEST(processMove, specialMoves)
     initializeBoard();
     emptyRow = 1;
     emptyCol = 1;
-
-    // Выход из игры (это приведет к завершению программы, невозможно проверить
-    // в рамках этого теста)
     ASSERT_TRUE(processMove('q'));
 }
