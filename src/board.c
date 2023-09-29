@@ -59,7 +59,7 @@ void shuffleBoard(int numShuffles)
 
 void displayBoard()
 {
-    printf("\n  ---------------------\n");
+    printf("\n  ------------------\n");
     for (int i = 0; i < SIZE; i++) {
         printf("  |");
         for (int j = 0; j < SIZE; j++) {
@@ -73,7 +73,7 @@ void displayBoard()
                 }
             }
         }
-        printf("\n  ---------------------\n");
+        printf("\n  ------------------\n");
     }
 }
 
@@ -83,9 +83,14 @@ int isGameFinished()
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
             if (board[i][j] != num++) {
+                if (num == SIZE * SIZE && board[i][j] == 0) {
+                    return 1; // Пустая клетка в правом нижнем углу
+                }
                 return 0;
             }
         }
     }
-    return 1;
+    return 0; // Не должны дойти сюда, если все плитки в порядке
 }
+
+
