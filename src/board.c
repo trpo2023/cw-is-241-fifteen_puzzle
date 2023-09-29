@@ -92,5 +92,3 @@ int isGameFinished()
     }
     return 0;
 }
-
-
