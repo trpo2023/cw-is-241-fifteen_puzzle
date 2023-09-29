@@ -25,7 +25,7 @@ int main()
             printf("Неверный ход. Попробуйте еще раз.\n");
         }
     }
-
+    displayBoard();
     if (isGameFinished()) {
         printf("Поздравляем, вы выиграли!\n");
     }
