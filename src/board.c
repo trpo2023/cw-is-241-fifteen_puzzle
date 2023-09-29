@@ -84,13 +84,13 @@ int isGameFinished()
         for (int j = 0; j < SIZE; j++) {
             if (board[i][j] != num++) {
                 if (num == SIZE * SIZE && board[i][j] == 0) {
-                    return 1; // Пустая клетка в правом нижнем углу
+                    return 1;
                 }
                 return 0;
             }
         }
     }
-    return 0; // Не должны дойти сюда, если все плитки в порядке
+    return 0;
 }
 
 
